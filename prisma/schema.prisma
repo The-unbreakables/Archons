@@ -8,11 +8,11 @@ datasource db {
 }
 
 model Events {
-  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
   description String
-  end_date    String
+  end_date    DateTime @db.Date
   img         String
-  start_date  String
+  start_date  DateTime @db.Date
   title       String
 }
 
