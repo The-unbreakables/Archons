@@ -13,10 +13,7 @@ export default async function handler(req, res) {
         } 
     })
     if(result.length===0)
-    return res.status(400).json({message:"email/password is incorrect"})
+    return res.json({message:"email/password is incorrect"})
     res.status(200).json({message:"Successfully logged in"})
-
-    res.status(200).json({ email })
-
   }
   
