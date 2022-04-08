@@ -1,8 +1,11 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { PrismaClient } from '@prisma/client'
 
-export default function handler(req, res) {
-    if(req.method==='PUT')
-    return res.send("oh ho is this put?")
-    res.status(200).json({ name: 'John Doe',method:req.method })
+const prisma = new PrismaClient()
+
+
+export default async function handler(req, res) {
+    const events=await prisma.events.findMany()
+
+    res.status(200).json({events})
   }
   
